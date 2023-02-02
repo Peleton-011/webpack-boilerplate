@@ -75,7 +75,7 @@ module.exports = {
     },
     optimization: {
         innerGraph: true,
-        userExports: true,
+        usedExports: true,
         splitChunks: {
             chunks: "all",
         },
