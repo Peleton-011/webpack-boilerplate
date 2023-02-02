@@ -11,7 +11,7 @@ module.exports = {
         index: "./src/index.js",
         print: "./src/print.js",
     },
-    devtool: "inline-source-map",
+    devtool: "eval-source-map", //for production, use none
     module: {
         rules: [
             {
