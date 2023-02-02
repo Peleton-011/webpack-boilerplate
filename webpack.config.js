@@ -8,6 +8,30 @@ module.exports = {
         print: "./src/print.js",
     },
     devtool: "inline-source-map",
+    module: {
+        rules: [
+            {
+                test: /\.css$/i,
+                use: ["style-loader", "css-loader"],
+            },
+            {
+                test: /\.(png|jpg|jpeg|gif|svg)$/i,
+                type: "asset/resource",
+            },
+            {
+                test: /\.(woff|woff2|ttf|eot|otf)$/i,
+                type: "asset/resource",
+            },
+            {
+                test: /\.(csv|tsv)$/i,
+                use: ["csv-loader"],
+            },
+            {
+                test: /\.xml$/i,
+                use: ["xml-loader"],
+            },
+        ],
+    },
     devServer: {
         static: "./dist", //The static directory where the server gets the data
     },
