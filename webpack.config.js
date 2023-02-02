@@ -1,3 +1,4 @@
+
 const path = require("path");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -8,8 +9,8 @@ const json5 = require("json5");
 module.exports = {
     mode: "development",
     entry: {
-        index: "./src/index.js",
-        print: "./src/print.js",
+        app: "./src/index.js",
+
     },
     devtool: "eval-source-map", //for production, use none
     module: {
@@ -59,6 +60,7 @@ module.exports = {
     },
     devServer: {
         static: "./dist", //The static directory where the server gets the data
+        hot: true,
     },
     plugins: [
         new HtmlWebpackPlugin({
