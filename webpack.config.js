@@ -5,6 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const toml = require("toml");
 const yaml = require("yamljs");
 const json5 = require("json5");
+const { allowedNodeEnvironmentFlags } = require("process");
 
 module.exports = {
     mode: "development",
@@ -73,7 +74,11 @@ module.exports = {
         clean: true,
     },
     optimization: {
-        runtimeChunk: "single", //Check docs about Code Splitting
+        innerGraph: true,
+        userExports: true,
+        splitChunks: {
+            chunks: "all",
+        },
     },
 };
 
